@@ -1,7 +1,4 @@
-/**
- * This file is just a silly example to show everything working in the browser.
- * When you're ready to start on your site, clear the file. Happy hacking!
- **/
+import { registerImage } from "./lazy";
 
 console.log('Happy hacking :)')
 //crear (1) image
@@ -38,7 +35,7 @@ const addButton = document.querySelector('button');
 const addImage = () => {
     const newImage = createImageNode(); //se crea un contenedor con la img
     mountNode.append(newImage) //lo metemos a la etiqueta ancla del HTML
-
+    registerImage(newImage);//registralo en el lazing loading y la empieces a escuchar
 };
 
 addButton.addEventListener('click', addImage)

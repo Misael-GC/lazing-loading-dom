@@ -5,3 +5,6 @@ https://randomfox.ca/images/2.jpg
 2.1 imagenes aleatorias
 
 3. Eventos - DOM > agregar imagenes
+
+4. Intersetion Observer
+5. Aplicar el lazy loading imgenes
