@@ -7,9 +7,12 @@ console.log('Happy hacking :)')
 //crear (1) image
 //agregar #image
 //referencia
-{/* <div class="p-4">
-<img src="https://randomfox.ca/images/2.jpg" alt="" width="320" class="mx-auto"/>
-</div> */}
+
+//formula del random
+const min = 1;
+const max = 122;
+const random = () => Math.floor(Math.random()* (max - min)) + min;
+
 
 const createImageNode =  () => {
     const container = document.createElement('div');//creamos el item para el contenedor
@@ -18,7 +21,7 @@ const createImageNode =  () => {
     const image = document.createElement('img'); //creamos la img
     image.className = 'mx-auto'; //podemos aplicar tailwind
     image.width = '320'
-    image.src =`https://randomfox.ca/images/2.jpg`; //TO Do
+    image.src =`https://randomfox.ca/images/${random()}.jpg`; //TO Do
 
     container.appendChild(image);//le metemos la imagen al contenedor
     return container;
@@ -27,5 +30,11 @@ const createImageNode =  () => {
 
 const nuevaImg = createImageNode(); //lo referenciamos a una variable
 const mountNode = document.getElementById('images') //lo guardamos en una referencia porque lo vamos a usar much
-mountNode.appendChild(nuevaImg) //lo metemos a la etiqueta ancla del HTML
+mountNode.append(
+    nuevaImg,
+    createImageNode(),
+    createImageNode(),
+    createImageNode(),
+    createImageNode()
+    ) //lo metemos a la etiqueta ancla del HTML
 
