@@ -30,11 +30,18 @@ const createImageNode =  () => {
 
 const nuevaImg = createImageNode(); //lo referenciamos a una variable
 const mountNode = document.getElementById('images') //lo guardamos en una referencia porque lo vamos a usar much
-mountNode.append(
-    nuevaImg,
-    createImageNode(),
-    createImageNode(),
-    createImageNode(),
-    createImageNode()
-    ) //lo metemos a la etiqueta ancla del HTML
+
+//creamos el boton que traiga un nuevo
+const addButton = document.querySelector('button');
+
+//accion del boton agregar img
+const addImage = () => {
+    const newImage = createImageNode(); //se crea un contenedor con la img
+    mountNode.append(newImage) //lo metemos a la etiqueta ancla del HTML
+
+};
+
+addButton.addEventListener('click', addImage)
+
+
 

@@ -4,4 +4,4 @@ https://randomfox.ca/images/2.jpg
 2. imagenes html -> JS
 2.1 imagenes aleatorias
 
-3. Eventos - DOM
+3. Eventos - DOM > agregar imagenes
