@@ -29,3 +29,5 @@ export const registerImage = (Image) => {
     //itersectaction Observador -> observar(image)
     observer.observe(Image)
 }
+
+//
