@@ -1,11 +1,5 @@
 import { registerImage } from "./lazy.js";
 
-console.log('Happy hacking :)')
-//crear (1) image
-//agregar #image
-//referencia
-
-//formula del random
 const min = 1;
 const max = 122;
 const random = () => Math.floor(Math.random()* (max - min)) + min;
@@ -18,7 +12,7 @@ const createImageNode =  () => {
     const image = document.createElement('img'); //creamos la img
     image.className = 'mx-auto'; //podemos aplicar tailwind
     image.width = '320'
-    image.src =`https://randomfox.ca/images/${random()}.jpg`; //TO Do
+    image.dataset.src =`https://randomfox.ca/images/${random()}.jpg`;
 
     container.appendChild(image);//le metemos la imagen al contenedor
     return container;
