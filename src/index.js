@@ -14,7 +14,14 @@ const createImageNode =  () => {
     image.width = '320'
     image.dataset.src =`https://randomfox.ca/images/${random()}.jpg`;
 
-    container.appendChild(image);//le metemos la imagen al contenedor
+    const imgWrapper = document.createElement('div');
+    imgWrapper.className = 'bg-gray-300';
+    imgWrapper.style.minHeight ='100px';
+    // imgWrapper.style.display = 'inline-block';
+    imgWrapper.style.position = 'absolule'
+
+    imgWrapper.appendChild(image)
+    container.appendChild(imgWrapper);//le metemos la imagen al contenedor
     return container;
 };
 
