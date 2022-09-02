@@ -5,7 +5,8 @@ const isIntersecting = (entry)=> {
 
 const loadImage = (entry) => {
     const container = entry.target; //container = contenedor div con la img
-    const imagen = container.firstChild;
+    const imagen = container.firstChild.firstChild;
+    debugger;
     const url = imagen.dataset.src;
     //cargue image
     imagen.src = url;
