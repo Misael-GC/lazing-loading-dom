@@ -17,11 +17,11 @@ const createImageNode =  () => {
     const imgWrapper = document.createElement('div');
     imgWrapper.className = 'bg-gray-300';
     imgWrapper.style.minHeight ='100px';
-    // imgWrapper.style.display = 'inline-block';
-    imgWrapper.style.position = 'absolule'
+    imgWrapper.style.display = 'inline-block';
+    // imgWrapper.style.position = 'absolule'
 
-    imgWrapper.appendChild(image)
-    container.appendChild(imgWrapper);//le metemos la imagen al contenedor
+    imgWrapper.appendChild(image);//le metemos la imagen al contenedor
+    container.appendChild(imgWrapper);//le metemos el nuevo contenedor con la imagen al contenedor principal
     return container;
 };
 
@@ -42,9 +42,7 @@ const addImage = () => {
 addButton.addEventListener('click', addImage)
 
 
-//delete image
-
-
+//delete last image
 const removeButton = document.querySelector('#remove');
 removeButton.className = 'text-white px-3 py-2 rounded-lg bg-gray-900 focus:outline-none';
 
@@ -56,3 +54,22 @@ const container = mountNode.lastElementChild;
 }
 
 removeButton.addEventListener('click', removeImage);
+
+//delete All image
+const AllremoveButton = document.querySelector('#removeAll');
+AllremoveButton.className = 'text-white px-3 py-2 rounded-lg bg-gray-900 focus:outline-none';
+
+const AllremoveImage = () => {
+
+// console.log(mountNode.childNodes); //es un objeto convertir a un array
+let k = Object.values(mountNode.childNodes);
+console.log(k);
+
+k.forEach(child => {
+    child.remove();
+    console.log(k)
+})
+
+}
+
+AllremoveButton.addEventListener('click', AllremoveImage);
