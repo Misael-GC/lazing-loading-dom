@@ -35,4 +35,17 @@ const addImage = () => {
 addButton.addEventListener('click', addImage)
 
 
+//delete image
 
+
+const removeButton = document.querySelector('#remove');
+removeButton.className = 'text-white px-3 py-2 rounded-lg bg-gray-900 focus:outline-none';
+
+const removeImage = () => {
+if (mountNode.hasChildNodes()) {
+const container = mountNode.lastElementChild;
+        mountNode.removeChild(container);
+    }
+}
+
+removeButton.addEventListener('click', removeImage);
