@@ -11,8 +11,10 @@ const loadImage = (entry) => {
     imagen.src = url;
 
     // debugger;
-    //console.log(container.nodeName);
-
+    // console.log(url);
+    loadedImages++;
+    printLog();
+    
     observer.unobserve(container);
 }
 
