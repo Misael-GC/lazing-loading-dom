@@ -22,6 +22,10 @@ const createImageNode =  () => {
 
     imgWrapper.appendChild(image);//le metemos la imagen al contenedor
     container.appendChild(imgWrapper);//le metemos el nuevo contenedor con la imagen al contenedor principal
+
+    appendedImages ++;
+    printLog()
+
     return container;
 };
 
@@ -41,6 +45,8 @@ const addImage = () => {
 
 addButton.addEventListener('click', addImage)
 
+
+//--------bitones delete -----------------------------------------
 
 //delete last image
 const removeButton = document.querySelector('#remove');
