@@ -50,7 +50,7 @@ addButton.addEventListener('click', addImage)
 
 //delete last image
 const removeButton = document.querySelector('#remove');
-removeButton.className = 'text-white px-3 py-2 rounded-lg bg-gray-900 focus:outline-none';
+removeButton.className = 'text-white px-3 py-2 rounded-lg bg-gray-900 focus:outline-none mt-5';
 
 const removeImage = () => {
 if (mountNode.hasChildNodes()) {
@@ -63,7 +63,7 @@ const container = mountNode.lastElementChild;
 
 //delete All image
 const allRemoveButton = document.querySelector('#removeAll');
-allRemoveButton.className = 'text-white px-3 py-2 rounded-lg bg-gray-900 focus:outline-none';
+allRemoveButton.className = 'text-white px-6 py-2 rounded-lg bg-gray-900 focus:outline-none mt-3';
 
 const AllremoveImage = () => {
 
