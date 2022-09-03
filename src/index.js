@@ -53,23 +53,39 @@ const container = mountNode.lastElementChild;
     }
 }
 
-removeButton.addEventListener('click', removeImage);
+
 
 //delete All image
-const AllremoveButton = document.querySelector('#removeAll');
-AllremoveButton.className = 'text-white px-3 py-2 rounded-lg bg-gray-900 focus:outline-none';
+const allRemoveButton = document.querySelector('#removeAll');
+allRemoveButton.className = 'text-white px-3 py-2 rounded-lg bg-gray-900 focus:outline-none';
 
 const AllremoveImage = () => {
 
 // console.log(mountNode.childNodes); //es un objeto convertir a un array
-let k = Object.values(mountNode.childNodes);
-console.log(k);
+let elementosCompletos = Object.values(mountNode.childNodes);
+// console.log(elementosCompletos);
 
-k.forEach(child => {
+elementosCompletos.forEach(child => {
     child.remove();
-    console.log(k)
+
 })
 
 }
 
-AllremoveButton.addEventListener('click', AllremoveImage);
+
+
+//delete la primer imagen
+const firstRemoveButton = document.querySelector('#removeFirst');
+firstRemoveButton.className = 'text-white px-3 py-2 rounded-lg bg-gray-900 focus:outline-none';
+
+const firstRemoveImage = () =>{
+        mountNode.childNodes.forEach(child => {
+        child.remove();
+    })
+}
+
+
+firstRemoveButton.addEventListener('click', firstRemoveImage)
+removeButton.addEventListener('click', removeImage);
+allRemoveButton.addEventListener('click', AllremoveImage);
+
