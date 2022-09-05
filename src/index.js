@@ -1,4 +1,5 @@
 import { registerImage } from "./lazy";
+import jsx from 'hyperscript';
 
 const min = 1;
 const max = 122;
@@ -6,13 +7,15 @@ const random = () => Math.floor(Math.random()* (max - min)) + min;
 
 
 const createImageNode =  () => {
-    const container = document.createElement('div');//creamos el item para el contenedor
-    container.className = 'p-4';
+    // const image = document.createElement('img'); //creamos la img
+    // image.className = 'mx-auto'; //podemos aplicar tailwind
+    // image.width = '320'
+    // image.dataset.src =`https://randomfox.ca/images/${random()}.jpg`;
 
-    const image = document.createElement('img'); //creamos la img
-    image.className = 'mx-auto'; //podemos aplicar tailwind
-    image.width = '320'
-    image.dataset.src =`https://randomfox.ca/images/${random()}.jpg`;
+    const image = jsx('img.mx-auto', {
+        width: '320',
+        'data-src':`https://randomfox.ca/images/${random()}.jpg`,
+    });
 
     const imgWrapper = document.createElement('div');
     imgWrapper.className = 'bg-gray-300';
@@ -20,8 +23,13 @@ const createImageNode =  () => {
     imgWrapper.style.display = 'inline-block';
     // imgWrapper.style.position = 'absolule'
 
+    // const container = document.createElement('div');//creamos el item para el contenedor
+    // container.className = 'p-4';
+    const container = jsx('div.p-4.mt-3', imgWrapper);
+
+
     imgWrapper.appendChild(image);//le metemos la imagen al contenedor
-    container.appendChild(imgWrapper);//le metemos el nuevo contenedor con la imagen al contenedor principal
+    // container.appendChild(imgWrapper);//le metemos el nuevo contenedor con la imagen al contenedor principal
 
     appendedImages ++;
     printLog()
